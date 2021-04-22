@@ -1,4 +1,5 @@
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { Story, Meta } from '@storybook/angular';
+
 import { action } from '@storybook/addon-actions';
 
 import { TaskComponent } from './task.component';
@@ -15,7 +16,6 @@ export const actionsData = {
 };
 
 const Template: Story<TaskComponent> = args => ({
-  component: TaskComponent,
   props: {
     ...args,
     onPinTask: actionsData.onPinTask,
@@ -29,7 +29,7 @@ Default.args = {
     id: '1',
     title: 'Test Task',
     state: 'TASK_INBOX',
-    updatedAt: new Date(2018, 0, 1, 9, 0),
+    updatedAt: new Date(2021, 0, 1, 9, 0),
   },
 };
 
