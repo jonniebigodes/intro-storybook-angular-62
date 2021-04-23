@@ -57,6 +57,5 @@ export class PureTaskListComponent {
       ...arr.filter((t) => t.state === 'TASK_PINNED'),
       ...arr.filter((t) => t.state !== 'TASK_PINNED'),
     ];
-   console.log(`tasksInOrder =>${JSON.stringify(this.tasksInOrder, null, 2)}`);
   }
 }
