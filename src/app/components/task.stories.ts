@@ -1,13 +1,22 @@
-import { Story, Meta } from '@storybook/angular';
+import { moduleMetadata, Story, Meta } from '@storybook/angular';
+
+import { CommonModule } from '@angular/common';
 
 import { action } from '@storybook/addon-actions';
 
 import { TaskComponent } from './task.component';
 
 export default {
-  title: 'Task',
   component: TaskComponent,
+  decorators: [
+    moduleMetadata({
+      //👇 Imports both components to allow component composition with storybook
+      declarations: [TaskComponent],
+      imports: [CommonModule],
+    }),
+  ],
   excludeStories: /.*Data$/,
+  title: 'Task',
 } as Meta;
 
 export const actionsData = {
@@ -15,7 +24,7 @@ export const actionsData = {
   onArchiveTask: action('onArchiveTask'),
 };
 
-const Template: Story<TaskComponent> = args => ({
+const Template: Story<TaskComponent> = (args) => ({
   props: {
     ...args,
     onPinTask: actionsData.onPinTask,
