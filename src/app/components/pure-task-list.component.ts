@@ -33,6 +33,7 @@ import { Task } from '../models/task.model';
 })
 export class PureTaskListComponent {
   /**
+   * @ignore
    * Component property to define ordering of tasks
    */
   tasksInOrder: Task[] = [];
