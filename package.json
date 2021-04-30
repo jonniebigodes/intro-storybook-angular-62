@@ -19,7 +19,8 @@
     "lint": "ng lint",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006 --no-manager-cache",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "build-storybook": "npm run docs:json && build-storybook",
+    "serve-prod":"http-server storybook-static"
   },
   "private": true,
   "dependencies": {
@@ -56,6 +57,7 @@
     "@types/node": "^12.11.1",
     "babel-loader": "^8.2.2",
     "codelyzer": "^6.0.0",
+    "http-server": "^0.12.3",
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.3.2",
     "karma-coverage": "~2.0.3",
