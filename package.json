@@ -20,7 +20,7 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006 --no-manager-cache",
     "build-storybook": "npm run docs:json && build-storybook",
-    "serve-prod":"http-server storybook-static"
+    "serve-prod":"npm run build-storybook && http-server storybook-static"
   },
   "private": true,
   "dependencies": {
